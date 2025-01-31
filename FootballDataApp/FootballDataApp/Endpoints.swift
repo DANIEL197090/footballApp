@@ -2,7 +2,7 @@
 //  Endpoints.swift
 //  FootballDataApp
 //
-//  Created by mac on 1/31/25.
+//  Created by Ifeanyi Mbata on 1/31/25.
 //
 
 import Foundation
