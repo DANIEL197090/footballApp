@@ -7,12 +7,22 @@
 
 import UIKit
 
-class CompetitionViewController: UIViewController {
-
+class CompetitionViewController: BaseViewController {
+    let competitiontableView = UITableView()
+    func setUpTableView() {
+        // Setup table view
+        competitiontableView.delegate = self
+        competitiontableView.dataSource = self
+        competitiontableView.rowHeight = 50
+        competitiontableView.separatorColor = backgroundSystemColor
+        competitiontableView.backgroundColor =  .systemBackground
+        competitiontableView.register(CompetitionCell.self, forCellReuseIdentifier: CompetitionCell.identifier)
+        competitiontableView.translatesAutoresizingMaskIntoConstraints = false
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        title = "Competition"
-        // Do any additional setup after loading the view.
+        setupViews()
+        setUpTableView()
     }
+    
 }

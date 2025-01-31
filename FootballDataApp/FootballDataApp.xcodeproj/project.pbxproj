@@ -21,6 +21,21 @@
 		0435ED072D4BDFF200EE2BA1 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED062D4BDFF200EE2BA1 /* MatchesViewController.swift */; };
 		0435ED0A2D4C5DAC00EE2BA1 /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED092D4C5DAC00EE2BA1 /* CustomNavigation.swift */; };
 		0435ED0D2D4C63AB00EE2BA1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED0C2D4C63AB00EE2BA1 /* Extensions.swift */; };
+		0435ED102D4C68D400EE2BA1 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED0F2D4C68D300EE2BA1 /* Colors.swift */; };
+		0435ED122D4C6A8F00EE2BA1 /* CompetitonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED112D4C6A8F00EE2BA1 /* CompetitonCell.swift */; };
+		0435ED152D4C6AC500EE2BA1 /* CompetitonTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED142D4C6AC500EE2BA1 /* CompetitonTableView.swift */; };
+		0435ED172D4C6B2600EE2BA1 /* CompetitionLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED162D4C6B2600EE2BA1 /* CompetitionLayoutConstraint.swift */; };
+		0435ED1B2D4C6C9400EE2BA1 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0435ED192D4C6C9400EE2BA1 /* Montserrat-Bold.ttf */; };
+		0435ED1C2D4C6C9400EE2BA1 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0435ED1A2D4C6C9400EE2BA1 /* Montserrat-Regular.ttf */; };
+		0435ED1E2D4C6E0C00EE2BA1 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED1D2D4C6E0C00EE2BA1 /* Fonts.swift */; };
+		0435ED202D4C6F8F00EE2BA1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED1F2D4C6F8F00EE2BA1 /* BaseViewController.swift */; };
+		0435ED232D4C7A9A00EE2BA1 /* CompetitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED222D4C7A9A00EE2BA1 /* CompetitionModel.swift */; };
+		0435ED262D4C7B3200EE2BA1 /* CompetitionResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED252D4C7B3200EE2BA1 /* CompetitionResource.swift */; };
+		0435ED292D4C7B5500EE2BA1 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED282D4C7B5500EE2BA1 /* HttpService.swift */; };
+		0435ED2B2D4C7B8A00EE2BA1 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED2A2D4C7B8A00EE2BA1 /* Toast.swift */; };
+		0435ED2D2D4C81DF00EE2BA1 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED2C2D4C81DF00EE2BA1 /* Endpoints.swift */; };
+		0435ED2F2D4C830300EE2BA1 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED2E2D4C830300EE2BA1 /* HelperFunctions.swift */; };
+		0435ED322D4C83AD00EE2BA1 /* CompetitionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED312D4C83AC00EE2BA1 /* CompetitionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +74,21 @@
 		0435ED062D4BDFF200EE2BA1 /* MatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
 		0435ED092D4C5DAC00EE2BA1 /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
 		0435ED0C2D4C63AB00EE2BA1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0435ED0F2D4C68D300EE2BA1 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		0435ED112D4C6A8F00EE2BA1 /* CompetitonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitonCell.swift; sourceTree = "<group>"; };
+		0435ED142D4C6AC500EE2BA1 /* CompetitonTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitonTableView.swift; sourceTree = "<group>"; };
+		0435ED162D4C6B2600EE2BA1 /* CompetitionLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionLayoutConstraint.swift; sourceTree = "<group>"; };
+		0435ED192D4C6C9400EE2BA1 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		0435ED1A2D4C6C9400EE2BA1 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		0435ED1D2D4C6E0C00EE2BA1 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		0435ED1F2D4C6F8F00EE2BA1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		0435ED222D4C7A9A00EE2BA1 /* CompetitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionModel.swift; sourceTree = "<group>"; };
+		0435ED252D4C7B3200EE2BA1 /* CompetitionResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionResource.swift; sourceTree = "<group>"; };
+		0435ED282D4C7B5500EE2BA1 /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
+		0435ED2A2D4C7B8A00EE2BA1 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		0435ED2C2D4C81DF00EE2BA1 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		0435ED2E2D4C830300EE2BA1 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		0435ED312D4C83AC00EE2BA1 /* CompetitionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +139,8 @@
 		0435ECCF2D4BC4BA00EE2BA1 /* FootballDataApp */ = {
 			isa = PBXGroup;
 			children = (
+				0435ED272D4C7B4700EE2BA1 /* Service */,
+				0435ED182D4C6C2B00EE2BA1 /* AppFonts */,
 				0435ED0B2D4C639900EE2BA1 /* Helpers */,
 				0435ED082D4C5D9600EE2BA1 /* DesignComponent */,
 				0435ED032D4BDDA200EE2BA1 /* Views */,
@@ -143,9 +175,9 @@
 		0435ED032D4BDDA200EE2BA1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0435ED132D4C6A9800EE2BA1 /* Matches */,
+				0435ED0E2D4C689E00EE2BA1 /* Competitons */,
 				0435ECD42D4BC4BA00EE2BA1 /* TabBarController.swift */,
-				0435ED042D4BDFCB00EE2BA1 /* CompetitionController.swift */,
-				0435ED062D4BDFF200EE2BA1 /* MatchesViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -154,6 +186,9 @@
 			isa = PBXGroup;
 			children = (
 				0435ED092D4C5DAC00EE2BA1 /* CustomNavigation.swift */,
+				0435ED0F2D4C68D300EE2BA1 /* Colors.swift */,
+				0435ED1D2D4C6E0C00EE2BA1 /* Fonts.swift */,
+				0435ED1F2D4C6F8F00EE2BA1 /* BaseViewController.swift */,
 			);
 			name = DesignComponent;
 			sourceTree = "<group>";
@@ -162,8 +197,74 @@
 			isa = PBXGroup;
 			children = (
 				0435ED0C2D4C63AB00EE2BA1 /* Extensions.swift */,
+				0435ED2E2D4C830300EE2BA1 /* HelperFunctions.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		0435ED0E2D4C689E00EE2BA1 /* Competitons */ = {
+			isa = PBXGroup;
+			children = (
+				0435ED302D4C833700EE2BA1 /* ViewModel */,
+				0435ED242D4C7B0C00EE2BA1 /* DataResource */,
+				0435ED212D4C7A8700EE2BA1 /* Model */,
+				0435ED042D4BDFCB00EE2BA1 /* CompetitionController.swift */,
+				0435ED112D4C6A8F00EE2BA1 /* CompetitonCell.swift */,
+				0435ED142D4C6AC500EE2BA1 /* CompetitonTableView.swift */,
+				0435ED162D4C6B2600EE2BA1 /* CompetitionLayoutConstraint.swift */,
+			);
+			name = Competitons;
+			sourceTree = "<group>";
+		};
+		0435ED132D4C6A9800EE2BA1 /* Matches */ = {
+			isa = PBXGroup;
+			children = (
+				0435ED062D4BDFF200EE2BA1 /* MatchesViewController.swift */,
+			);
+			name = Matches;
+			sourceTree = "<group>";
+		};
+		0435ED182D4C6C2B00EE2BA1 /* AppFonts */ = {
+			isa = PBXGroup;
+			children = (
+				0435ED192D4C6C9400EE2BA1 /* Montserrat-Bold.ttf */,
+				0435ED1A2D4C6C9400EE2BA1 /* Montserrat-Regular.ttf */,
+			);
+			name = AppFonts;
+			sourceTree = "<group>";
+		};
+		0435ED212D4C7A8700EE2BA1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0435ED222D4C7A9A00EE2BA1 /* CompetitionModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0435ED242D4C7B0C00EE2BA1 /* DataResource */ = {
+			isa = PBXGroup;
+			children = (
+				0435ED252D4C7B3200EE2BA1 /* CompetitionResource.swift */,
+			);
+			name = DataResource;
+			sourceTree = "<group>";
+		};
+		0435ED272D4C7B4700EE2BA1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0435ED282D4C7B5500EE2BA1 /* HttpService.swift */,
+				0435ED2A2D4C7B8A00EE2BA1 /* Toast.swift */,
+				0435ED2C2D4C81DF00EE2BA1 /* Endpoints.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		0435ED302D4C833700EE2BA1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0435ED312D4C83AC00EE2BA1 /* CompetitionViewModel.swift */,
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,8 +371,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0435ED1B2D4C6C9400EE2BA1 /* Montserrat-Bold.ttf in Resources */,
 				0435ECDD2D4BC4C000EE2BA1 /* Assets.xcassets in Resources */,
 				0435ECE02D4BC4C000EE2BA1 /* Base in Resources */,
+				0435ED1C2D4C6C9400EE2BA1 /* Montserrat-Regular.ttf in Resources */,
 				0435ECD82D4BC4BA00EE2BA1 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,12 +400,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0435ED322D4C83AD00EE2BA1 /* CompetitionViewModel.swift in Sources */,
 				0435ED0A2D4C5DAC00EE2BA1 /* CustomNavigation.swift in Sources */,
+				0435ED102D4C68D400EE2BA1 /* Colors.swift in Sources */,
+				0435ED1E2D4C6E0C00EE2BA1 /* Fonts.swift in Sources */,
+				0435ED172D4C6B2600EE2BA1 /* CompetitionLayoutConstraint.swift in Sources */,
 				0435ED072D4BDFF200EE2BA1 /* MatchesViewController.swift in Sources */,
+				0435ED2F2D4C830300EE2BA1 /* HelperFunctions.swift in Sources */,
+				0435ED202D4C6F8F00EE2BA1 /* BaseViewController.swift in Sources */,
+				0435ED232D4C7A9A00EE2BA1 /* CompetitionModel.swift in Sources */,
+				0435ED2B2D4C7B8A00EE2BA1 /* Toast.swift in Sources */,
+				0435ED262D4C7B3200EE2BA1 /* CompetitionResource.swift in Sources */,
+				0435ED292D4C7B5500EE2BA1 /* HttpService.swift in Sources */,
 				0435ECD52D4BC4BA00EE2BA1 /* TabBarController.swift in Sources */,
 				0435ED0D2D4C63AB00EE2BA1 /* Extensions.swift in Sources */,
 				0435ECD12D4BC4BA00EE2BA1 /* AppDelegate.swift in Sources */,
 				0435ED052D4BDFCC00EE2BA1 /* CompetitionController.swift in Sources */,
+				0435ED2D2D4C81DF00EE2BA1 /* Endpoints.swift in Sources */,
+				0435ED122D4C6A8F00EE2BA1 /* CompetitonCell.swift in Sources */,
+				0435ED152D4C6AC500EE2BA1 /* CompetitonTableView.swift in Sources */,
 				0435ECDB2D4BC4BA00EE2BA1 /* FootballDataApp.xcdatamodeld in Sources */,
 				0435ECD32D4BC4BA00EE2BA1 /* SceneDelegate.swift in Sources */,
 			);

@@ -36,8 +36,8 @@ class TabBarViewController: UITabBarController {
             }
         }
         // MARK: Changing the tint Color
-        self.tabBar.tintColor = .green
-        tabBar.backgroundColor =  .systemBackground
+        self.tabBar.tintColor = AppColors.primaryGreen.color
+        tabBar.backgroundColor =  backgroundSystemColor
         
     }
     
