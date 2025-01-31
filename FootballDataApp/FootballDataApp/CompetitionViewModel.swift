@@ -7,11 +7,11 @@
 
 import Foundation
 protocol CompetitionsViewModelDelegate: AnyObject {
-    func didReceiveCompetitionsResponse(response: CompetitionsResponse??, statusCode: Int)
+    func didReceiveCompetitionsResponse(response: CompetitionsResponse?, statusCode: Int)
 }
 class  CompetitionsViewModel {
     weak var delegate:  CompetitionsViewModelDelegate?
-    func getAllSubscriptionHistory() {
+    func getAllCompetitions() {
         let resource =  CompetitionsResource()
         resource.getResponse() { result, statusCode in
             switch statusCode {

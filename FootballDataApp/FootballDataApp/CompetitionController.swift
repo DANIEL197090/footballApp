@@ -9,6 +9,8 @@ import UIKit
 
 class CompetitionViewController: BaseViewController {
     let competitiontableView = UITableView()
+    let competitionsViewModel = CompetitionsViewModel()
+    var competitions: [Competition] = []
     func setUpTableView() {
         // Setup table view
         competitiontableView.delegate = self
@@ -23,6 +25,15 @@ class CompetitionViewController: BaseViewController {
         super.viewDidLoad()
         setupViews()
         setUpTableView()
+        competitionsViewModel.delegate = self
+        getAllCompetitions()
     }
-    
+    func getAllCompetitions() {
+        if InternetConnectionManager.isConnectedToNetwork(){
+            competitiontableView.isHidden = true
+            competitionsViewModel.getAllCompetitions()
+        } else {
+            Toast.shared.showToastWithTItle("\(showNoInternetConnectionHeader()), \(showNoInternetConnection())", type: .error)
+        }
+    }
 }

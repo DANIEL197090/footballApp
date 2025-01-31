@@ -9,12 +9,13 @@ import UIKit
 extension CompetitionViewController: UITableViewDataSource, UITableViewDelegate  {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return  competitions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CompetitionCell.identifier, for: indexPath) as! CompetitionCell
-        cell.configure(withTitle: "\(indexPath.row + 1). Premier League 2020/2021")
+        let competitionName =  competitions[indexPath.row].name
+        cell.configure(withTitle: "\(indexPath.row + 1). \(competitionName)")
         // Add a forward arrow accessory
                cell.accessoryType = .disclosureIndicator // Default iOS arrow
                

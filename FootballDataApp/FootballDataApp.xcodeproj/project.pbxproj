@@ -36,6 +36,8 @@
 		0435ED2D2D4C81DF00EE2BA1 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED2C2D4C81DF00EE2BA1 /* Endpoints.swift */; };
 		0435ED2F2D4C830300EE2BA1 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED2E2D4C830300EE2BA1 /* HelperFunctions.swift */; };
 		0435ED322D4C83AD00EE2BA1 /* CompetitionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED312D4C83AC00EE2BA1 /* CompetitionViewModel.swift */; };
+		0435ED362D4C875500EE2BA1 /* InternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED352D4C875500EE2BA1 /* InternetConnection.swift */; };
+		0435ED382D4C884300EE2BA1 /* CompetitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED372D4C884300EE2BA1 /* CompetitionExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		0435ED2C2D4C81DF00EE2BA1 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		0435ED2E2D4C830300EE2BA1 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		0435ED312D4C83AC00EE2BA1 /* CompetitionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionViewModel.swift; sourceTree = "<group>"; };
+		0435ED352D4C875500EE2BA1 /* InternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnection.swift; sourceTree = "<group>"; };
+		0435ED372D4C884300EE2BA1 /* CompetitionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +216,7 @@
 				0435ED112D4C6A8F00EE2BA1 /* CompetitonCell.swift */,
 				0435ED142D4C6AC500EE2BA1 /* CompetitonTableView.swift */,
 				0435ED162D4C6B2600EE2BA1 /* CompetitionLayoutConstraint.swift */,
+				0435ED372D4C884300EE2BA1 /* CompetitionExtension.swift */,
 			);
 			name = Competitons;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 				0435ED282D4C7B5500EE2BA1 /* HttpService.swift */,
 				0435ED2A2D4C7B8A00EE2BA1 /* Toast.swift */,
 				0435ED2C2D4C81DF00EE2BA1 /* Endpoints.swift */,
+				0435ED352D4C875500EE2BA1 /* InternetConnection.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -405,6 +411,7 @@
 				0435ED102D4C68D400EE2BA1 /* Colors.swift in Sources */,
 				0435ED1E2D4C6E0C00EE2BA1 /* Fonts.swift in Sources */,
 				0435ED172D4C6B2600EE2BA1 /* CompetitionLayoutConstraint.swift in Sources */,
+				0435ED382D4C884300EE2BA1 /* CompetitionExtension.swift in Sources */,
 				0435ED072D4BDFF200EE2BA1 /* MatchesViewController.swift in Sources */,
 				0435ED2F2D4C830300EE2BA1 /* HelperFunctions.swift in Sources */,
 				0435ED202D4C6F8F00EE2BA1 /* BaseViewController.swift in Sources */,
@@ -420,6 +427,7 @@
 				0435ED122D4C6A8F00EE2BA1 /* CompetitonCell.swift in Sources */,
 				0435ED152D4C6AC500EE2BA1 /* CompetitonTableView.swift in Sources */,
 				0435ECDB2D4BC4BA00EE2BA1 /* FootballDataApp.xcdatamodeld in Sources */,
+				0435ED362D4C875500EE2BA1 /* InternetConnection.swift in Sources */,
 				0435ECD32D4BC4BA00EE2BA1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,3 +12,9 @@ enum HtppMethod: String {
     case DELETE = "DELETE"
     case PUT = "PUT"
 }
+func showNoInternetConnection() -> String {
+    return "Please check your internet connection and try again."
+}
+func showNoInternetConnectionHeader() -> String {
+    return "No Internet Connection"
+}
