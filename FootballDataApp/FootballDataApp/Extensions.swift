@@ -1,0 +1,16 @@
+//
+//  Extensions.swift
+//  FootballDataApp
+//
+//  Created by mac on 1/31/25.
+//
+
+import UIKit
+extension UIImage {
+    func resized(to size: CGSize) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
+        defer { UIGraphicsEndImageContext() }
+        draw(in: CGRect(origin: .zero, size: size))
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
+}

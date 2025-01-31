@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0435ECD12D4BC4BA00EE2BA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ECD02D4BC4BA00EE2BA1 /* AppDelegate.swift */; };
 		0435ECD32D4BC4BA00EE2BA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ECD22D4BC4BA00EE2BA1 /* SceneDelegate.swift */; };
-		0435ECD52D4BC4BA00EE2BA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ECD42D4BC4BA00EE2BA1 /* ViewController.swift */; };
+		0435ECD52D4BC4BA00EE2BA1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ECD42D4BC4BA00EE2BA1 /* TabBarController.swift */; };
 		0435ECD82D4BC4BA00EE2BA1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 0435ECD72D4BC4BA00EE2BA1 /* Base */; };
 		0435ECDB2D4BC4BA00EE2BA1 /* FootballDataApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0435ECD92D4BC4BA00EE2BA1 /* FootballDataApp.xcdatamodeld */; };
 		0435ECDD2D4BC4C000EE2BA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0435ECDC2D4BC4C000EE2BA1 /* Assets.xcassets */; };
@@ -17,6 +17,10 @@
 		0435ECEB2D4BC4C100EE2BA1 /* FootballDataAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ECEA2D4BC4C100EE2BA1 /* FootballDataAppTests.swift */; };
 		0435ECF52D4BC4C100EE2BA1 /* FootballDataAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ECF42D4BC4C100EE2BA1 /* FootballDataAppUITests.swift */; };
 		0435ECF72D4BC4C100EE2BA1 /* FootballDataAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ECF62D4BC4C100EE2BA1 /* FootballDataAppUITestsLaunchTests.swift */; };
+		0435ED052D4BDFCC00EE2BA1 /* CompetitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED042D4BDFCB00EE2BA1 /* CompetitionController.swift */; };
+		0435ED072D4BDFF200EE2BA1 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED062D4BDFF200EE2BA1 /* MatchesViewController.swift */; };
+		0435ED0A2D4C5DAC00EE2BA1 /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED092D4C5DAC00EE2BA1 /* CustomNavigation.swift */; };
+		0435ED0D2D4C63AB00EE2BA1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ED0C2D4C63AB00EE2BA1 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +44,7 @@
 		0435ECCD2D4BC4BA00EE2BA1 /* FootballDataApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballDataApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0435ECD02D4BC4BA00EE2BA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0435ECD22D4BC4BA00EE2BA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0435ECD42D4BC4BA00EE2BA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0435ECD42D4BC4BA00EE2BA1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		0435ECD72D4BC4BA00EE2BA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0435ECDA2D4BC4BA00EE2BA1 /* FootballDataApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FootballDataApp.xcdatamodel; sourceTree = "<group>"; };
 		0435ECDC2D4BC4C000EE2BA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +55,10 @@
 		0435ECF02D4BC4C100EE2BA1 /* FootballDataAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FootballDataAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0435ECF42D4BC4C100EE2BA1 /* FootballDataAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballDataAppUITests.swift; sourceTree = "<group>"; };
 		0435ECF62D4BC4C100EE2BA1 /* FootballDataAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballDataAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0435ED042D4BDFCB00EE2BA1 /* CompetitionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionController.swift; sourceTree = "<group>"; };
+		0435ED062D4BDFF200EE2BA1 /* MatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
+		0435ED092D4C5DAC00EE2BA1 /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
+		0435ED0C2D4C63AB00EE2BA1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +109,11 @@
 		0435ECCF2D4BC4BA00EE2BA1 /* FootballDataApp */ = {
 			isa = PBXGroup;
 			children = (
+				0435ED0B2D4C639900EE2BA1 /* Helpers */,
+				0435ED082D4C5D9600EE2BA1 /* DesignComponent */,
+				0435ED032D4BDDA200EE2BA1 /* Views */,
 				0435ECD02D4BC4BA00EE2BA1 /* AppDelegate.swift */,
 				0435ECD22D4BC4BA00EE2BA1 /* SceneDelegate.swift */,
-				0435ECD42D4BC4BA00EE2BA1 /* ViewController.swift */,
 				0435ECD62D4BC4BA00EE2BA1 /* Main.storyboard */,
 				0435ECDC2D4BC4C000EE2BA1 /* Assets.xcassets */,
 				0435ECDE2D4BC4C000EE2BA1 /* LaunchScreen.storyboard */,
@@ -128,6 +138,32 @@
 				0435ECF62D4BC4C100EE2BA1 /* FootballDataAppUITestsLaunchTests.swift */,
 			);
 			path = FootballDataAppUITests;
+			sourceTree = "<group>";
+		};
+		0435ED032D4BDDA200EE2BA1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0435ECD42D4BC4BA00EE2BA1 /* TabBarController.swift */,
+				0435ED042D4BDFCB00EE2BA1 /* CompetitionController.swift */,
+				0435ED062D4BDFF200EE2BA1 /* MatchesViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		0435ED082D4C5D9600EE2BA1 /* DesignComponent */ = {
+			isa = PBXGroup;
+			children = (
+				0435ED092D4C5DAC00EE2BA1 /* CustomNavigation.swift */,
+			);
+			name = DesignComponent;
+			sourceTree = "<group>";
+		};
+		0435ED0B2D4C639900EE2BA1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0435ED0C2D4C63AB00EE2BA1 /* Extensions.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +297,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0435ECD52D4BC4BA00EE2BA1 /* ViewController.swift in Sources */,
+				0435ED0A2D4C5DAC00EE2BA1 /* CustomNavigation.swift in Sources */,
+				0435ED072D4BDFF200EE2BA1 /* MatchesViewController.swift in Sources */,
+				0435ECD52D4BC4BA00EE2BA1 /* TabBarController.swift in Sources */,
+				0435ED0D2D4C63AB00EE2BA1 /* Extensions.swift in Sources */,
 				0435ECD12D4BC4BA00EE2BA1 /* AppDelegate.swift in Sources */,
+				0435ED052D4BDFCC00EE2BA1 /* CompetitionController.swift in Sources */,
 				0435ECDB2D4BC4BA00EE2BA1 /* FootballDataApp.xcdatamodeld in Sources */,
 				0435ECD32D4BC4BA00EE2BA1 /* SceneDelegate.swift in Sources */,
 			);
