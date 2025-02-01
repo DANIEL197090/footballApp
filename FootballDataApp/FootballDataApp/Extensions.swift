@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FittedSheets
 extension UIImage {
     func resized(to size: CGSize) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
@@ -62,6 +63,16 @@ extension  UIButton {
         button.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
         button.layer.borderWidth = borderWidth
         button.titleLabel?.font = UIFont(name: buttonFontFamily, size:  buttonFontSize)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }
+    class func cancelButtonDesign() -> UIButton {
+        let button = UIButton()
+        button.backgroundColor = .clear
+        button.setImage(UIImage(systemName: "xmark"), for: .normal)
+        button.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 44.0).isActive = true
+        button.tintColor = appTextColor
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }
@@ -157,4 +168,12 @@ extension UIImageView {
         imageView.layer.masksToBounds = true
         return imageView
     }
+}
+func createSheetViewController(with controller: UIViewController, sizes: [SheetSize]) -> SheetViewController {
+    let sheetController = SheetViewController(controller: controller, sizes: sizes)
+    sheetController.allowPullingPastMaxHeight = false
+    sheetController.contentBackgroundColor = .systemBackground
+    sheetController.cornerRadius = 12
+    sheetController.gripColor = .clear
+    return sheetController
 }

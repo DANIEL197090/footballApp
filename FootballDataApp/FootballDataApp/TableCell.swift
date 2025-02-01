@@ -33,7 +33,7 @@ class TableCell: UICollectionViewCell, UITableViewDataSource, UITableViewDelegat
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpTableView()
-        backgroundColor = .yellow
+        backgroundColor = backgroundSystemColor
         
         contentView.addSubview(standingstableView)
         
@@ -60,7 +60,8 @@ class TableCell: UICollectionViewCell, UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StandingsCell.identifier, for: indexPath) as! StandingsCell
         let standingDetails = teamStanding[indexPath.row]
-        cell.configure(clubName: "\(indexPath.row + 1). \(standingDetails.team.shortName )", standings: "\(standingDetails.playedGames)  \(standingDetails.won)  \(standingDetails.lost)  \(standingDetails.draw)  \(standingDetails.points)")
+        cell.configure(clubLogo: "\(standingDetails.team.crest)", clubName: "\(standingDetails.team.shortName)", standings: "\(standingDetails.playedGames)  \(standingDetails.won)  \(standingDetails.lost)  \(standingDetails.draw)  \(standingDetails.points)")
+        cell.clubPostionLabel.text = "\(indexPath.row + 1)."
         return cell
     }
 }

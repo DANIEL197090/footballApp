@@ -6,7 +6,12 @@
 //
 
 import UIKit
+protocol TeamCellDelegate: AnyObject {
+    func didSelectEachTeam(parentIndex: Int, playersList: [Player])
+}
+
 class TeamsCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    weak var delegate: TeamCellDelegate?
     var teamList: [Teams] = [] {
         didSet {
             collectionView.reloadData()
@@ -39,7 +44,7 @@ class TeamsCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVie
         // Anchor collectionView to top, bottom, left, and right of contentView
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 100),
-            collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -70),
+            collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -100),
             collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5)
         ])
@@ -67,4 +72,8 @@ class TeamsCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVie
         let itemWidth = (collectionView.frame.width) / 3 - totalSpacing
         return CGSize(width: itemWidth, height: 150) // Square boxes
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var players = teamList[indexPath.row].squad
+        delegate?.didSelectEachTeam(parentIndex: indexPath.item, playersList: players)
+        }
 }

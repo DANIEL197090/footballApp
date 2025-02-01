@@ -25,6 +25,7 @@ extension CompetitionOverViewController: UICollectionViewDataSource, UICollectio
         default:
             guard let cell =   competitionOverViewCollectionView.dequeueReusableCell(withReuseIdentifier: TeamsCell.identifier, for: indexPath) as? TeamsCell else { return UICollectionViewCell() }
             cell.teamList = teamList
+            cell.delegate = self
             return cell
         }
     }
@@ -34,3 +35,11 @@ extension CompetitionOverViewController: UICollectionViewDataSource, UICollectio
         
     }
 
+extension CompetitionOverViewController : TeamCellDelegate {
+    func didSelectEachTeam(parentIndex: Int, playersList: [Player]) {
+        print("Clicked on \(playersList) inside Parent Index \(parentIndex)")
+        let controller = PlayersViewController(playersList: playersList)
+        let sheetController = createSheetViewController(with: controller, sizes: [.fixed(500), .fixed(800)])
+        self.present(sheetController, animated: false)
+    }
+}

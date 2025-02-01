@@ -13,8 +13,8 @@ class AllTeamsCell: UICollectionViewCell {
     lazy var clubImageView:  UIImageView  = {
         let imageView =  UIImageView.customImage(image: UIImage(named: "matchesIcon")!)
         imageView.layer.masksToBounds = true
-        imageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         return imageView
     }()
     lazy var clubNameLabel: UILabel = {
@@ -22,7 +22,7 @@ class AllTeamsCell: UICollectionViewCell {
         return label
     }()
     lazy var detailsStack: UIStackView = {
-        let stackView = UIStackView.customVerticalStackView(distribution: .fill, views: [clubImageView, clubNameLabel], spacing: 0)
+        let stackView = UIStackView.customVerticalStackView(distribution: .fill, views: [clubImageView, clubNameLabel], spacing: 15)
         return stackView
     }()
     override init(frame: CGRect) {

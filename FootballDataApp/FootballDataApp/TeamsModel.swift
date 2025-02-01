@@ -61,7 +61,7 @@ struct TeamsArea: Codable {
     let id: Int
     let name: String
     let code: String
-    let flag: String
+    let flag: String?
 }
 
 // MARK: - Coach
