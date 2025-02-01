@@ -10,6 +10,9 @@ extension CompetitionOverViewController: CompetitionsStandingsViewModelDelegate,
     func didReceiveCompetitionsStandingsResponse(response: TeamsResponse?, statusCode: Int) {
         if statusCode == 200 {
             teamList = response?.teams ?? []
+            DispatchQueue.main.async {
+                self.competitionOverViewCollectionView.reloadData()
+            }
         }
         if statusCode == 400 {
             Toast.shared.showToastWithTItle("No matches found", type: .error)
@@ -18,6 +21,7 @@ extension CompetitionOverViewController: CompetitionsStandingsViewModelDelegate,
     
     func didReceiveCompetitionsStandingsResponse(response: StandingsResponse?, statusCode: Int) {
         if statusCode == 200 {
+            Loader.shared.hideLoader()
             competitionOverViewCollectionView.isHidden = false
             standings = response?.standings?[0].table ?? []
             DispatchQueue.main.async {

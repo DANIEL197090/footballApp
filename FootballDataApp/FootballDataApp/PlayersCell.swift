@@ -9,19 +9,19 @@ import UIKit
 class PlayerListCell: UITableViewCell {
     static var identifier = "playerListCell"
     lazy var playerNameLabel: UILabel = {
-        let label = UILabel.customLabel(text: "", fontSize: 14, fontFamily: AppFonts.montserratRegular.font, textAlignment: .left, numberofLines: 0, textColor: appTextColor)
+        let label = UILabel.customLabel(text: "Ifeanyi", fontSize: 14, fontFamily: AppFonts.montserratRegular.font, textAlignment: .left, numberofLines: 0, textColor: appTextColor)
         label.widthAnchor.constraint(equalToConstant: 20).isActive = true
         label.heightAnchor.constraint(equalToConstant: 35).isActive = true
         return label
     }()
     
     lazy var playerPositionLabel: UILabel = {
-        let label = UILabel.customLabel(text: "", fontSize: 14, fontFamily: AppFonts.montserratRegular.font, textAlignment: .right, numberofLines: 0, textColor: appTextColor)
+        let label = UILabel.customLabel(text: "Winger", fontSize: 14, fontFamily: AppFonts.montserratRegular.font, textAlignment: .right, numberofLines: 0, textColor: appTextColor)
         label.heightAnchor.constraint(equalToConstant: 35).isActive = true
         return label
     }()
     lazy var playerStack: UIStackView = {
-        let stackView = UIStackView.customHorizontalStackView(distribution: .fill, views: [playerNameLabel, playerPositionLabel], spacing: 10)
+        let stackView = UIStackView.customHorizontalStackView(distribution: .fillEqually, views: [playerNameLabel, playerPositionLabel], spacing: 10)
         stackView.alignment = .leading
         stackView.heightAnchor.constraint(equalToConstant: 35).isActive = true
         return stackView
@@ -44,8 +44,8 @@ class PlayerListCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(data: Player) {
-        playerNameLabel.text = data.name
+    func configure(playerName: String, data: Player) {
+        playerNameLabel.text = playerName
         playerPositionLabel.text = data.position
     }
 }

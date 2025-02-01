@@ -15,7 +15,7 @@ extension PlayersViewController: UITableViewDataSource, UITableViewDelegate  {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PlayerListCell.identifier, for: indexPath) as! PlayerListCell
         let players = playersList[indexPath.row]
-        cell.configure(data: players)
+        cell.configure(playerName: "\(indexPath.row + 1). \(players.name)", data: players)
         return cell
     }
   

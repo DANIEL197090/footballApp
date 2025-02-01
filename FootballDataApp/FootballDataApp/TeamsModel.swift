@@ -47,9 +47,9 @@ struct Teams: Codable {
     let tla: String
     let crest: String
     let address: String
-    let website: String
+    let website: String?
     let founded: Int?
-    let clubColors: String
+    let clubColors: String?
     let venue: String
     let runningCompetitions: [TeamsCompetition]
     let coach: Coach

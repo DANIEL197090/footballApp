@@ -9,8 +9,10 @@ import UIKit
 class PlayersViewController: BaseViewController {
     let playersTableView = UITableView()
     var playersList: [Player] = []
-    init(playersList: [Player]) {
+    var clubImage: String
+    init(playersList: [Player], clubImage: String) {
         self.playersList = playersList
+        self.clubImage = clubImage
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder: NSCoder) {
@@ -24,8 +26,8 @@ class PlayersViewController: BaseViewController {
     lazy var clubImageView:  UIImageView  = {
         let imageView =  UIImageView.customImage(image: UIImage(named: "matchesIcon")!)
         imageView.layer.masksToBounds = true
-       
-        imageView.widthAnchor.constraint(equalToConstant: 17).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         return imageView
     }()
     @objc func didTapOnCancelButton() {
@@ -44,6 +46,10 @@ class PlayersViewController: BaseViewController {
     override func viewDidLoad() {
         setupView()
         setUpTableView()
-        playersTableView.reloadData()
+        DispatchQueue.main.async {
+            self.playersTableView.reloadData()
+            self.clubImageView.sd_setImage(with: URL(string: self.clubImage), placeholderImage: UIImage(named: "matchesIcon"))
+        }
+       
     }
 }

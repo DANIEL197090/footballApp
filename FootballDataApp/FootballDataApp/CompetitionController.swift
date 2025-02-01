@@ -11,6 +11,7 @@ class CompetitionViewController: BaseViewController {
     let competitiontableView = UITableView()
     let competitionsViewModel = CompetitionsViewModel()
     var competitions: [Competition] = []
+    
     func setUpTableView() {
         // Setup table view
         competitiontableView.delegate = self
@@ -30,6 +31,7 @@ class CompetitionViewController: BaseViewController {
     }
     func getAllCompetitions() {
         if InternetConnectionManager.isConnectedToNetwork(){
+            Loader.shared.showLoader(withText: "Loading, Please wait..")
             competitiontableView.isHidden = true
             competitionsViewModel.getAllCompetitions()
         } else {

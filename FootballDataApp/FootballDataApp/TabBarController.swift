@@ -66,7 +66,7 @@ class TabBarViewController: UITabBarController {
 class CustomTabBar: UITabBar {
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         var newSize = super.sizeThatFits(size)
-        newSize.height = 80 // Adjust the height as needed
+        newSize.height = 100 // Adjust the height as needed
         return newSize
     }
 }

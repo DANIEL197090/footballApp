@@ -9,6 +9,7 @@ import Foundation
 extension MatchesViewController:TodayFixturesViewModelDelegate {
     func didReceiveTodayFixturessResponse(response: TodayMatchesResponse?, statusCode: Int) {
         if statusCode == 200 {
+            Loader.shared.hideLoader()
             matchesTableView.isHidden = false
             todayFixtures = response?.matches ?? []
             DispatchQueue.main.async {
@@ -17,6 +18,7 @@ extension MatchesViewController:TodayFixturesViewModelDelegate {
            
         }
         if statusCode == 400 {
+            Loader.shared.hideLoader()
             Toast.shared.showToastWithTItle("No matches found", type: .error)
         }
     }

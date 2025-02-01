@@ -12,7 +12,7 @@ class MatchesViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        setupNavigationBar()
+        //setupNavigationBar()
         todayFixturesViewModel.delegate  = self
         setUpTableView()
         getTodayFixtures()
@@ -47,17 +47,17 @@ class MatchesViewController: BaseViewController {
         matchesTableView.register(MatchesCell.self, forCellReuseIdentifier: MatchesCell.identifier)
         matchesTableView.translatesAutoresizingMaskIntoConstraints = false
     }
-    override func viewWillAppear(_ animated: Bool) {
-                self.navigationController?.isNavigationBarHidden = false
-                navigationController?.navigationBar.backgroundColor = .clear
-        self.navigationItem.setHidesBackButton(true, animated: true)
-    }
+  
     func getTodayFixtures() {
         if InternetConnectionManager.isConnectedToNetwork(){
             matchesTableView.isHidden = true
             todayFixturesViewModel.getTodayFixtures()
+            DispatchQueue.main.async {
+                Loader.shared.showLoader()
+            }
         } else {
             Toast.shared.showToastWithTItle("\(showNoInternetConnectionHeader()), \(showNoInternetConnection())", type: .error)
         }
     }
+    
 }

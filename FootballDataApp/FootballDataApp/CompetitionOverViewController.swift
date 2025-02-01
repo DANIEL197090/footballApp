@@ -8,10 +8,12 @@
 import UIKit
 class CompetitionOverViewController: BaseViewController {
     var competitionName: String
+    var competitionFullname: String
     var standings: [TeamStanding] = []
     var teamList: [Teams] = []
-    init(competitionName: String) {
+    init(competitionName: String, competitionFullname: String) {
         self.competitionName = competitionName
+        self.competitionFullname = competitionFullname
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder: NSCoder) {
@@ -25,10 +27,14 @@ class CompetitionOverViewController: BaseViewController {
         button.addTarget(self, action: #selector(didtapOnBackButton), for: .touchUpInside)
         return button
     }()
+    lazy var titleLabel: UILabel = {
+        let label = UILabel.customLabel(text: competitionFullname, fontSize: 16, fontFamily: AppFonts.montserratBold.font, textAlignment: .center, numberofLines: 0, textColor: appTextColor)
+        return label
+    }()
     lazy var topView: UIView = {
-        let view =  UIView.viewDesign(cornerRadius: 0, backgroundColor: .blue)
+        let view =  UIView.viewDesign(cornerRadius: 0, backgroundColor: .clear)
         view.isUserInteractionEnabled = true
-        view.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        view.heightAnchor.constraint(equalToConstant: 130).isActive = true
         return view
     }()
     lazy var headerView: UIView = {
@@ -130,6 +136,7 @@ class CompetitionOverViewController: BaseViewController {
     
     func getAllCompetitions() {
         if InternetConnectionManager.isConnectedToNetwork(){
+            Loader.shared.showLoader()
             competitionOverViewCollectionView.isHidden = true
             competitionsStandingsViewModel.getAllCompetitionsStandings(name: competitionName)
         } else {

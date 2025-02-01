@@ -63,3 +63,14 @@ var appTextColor : UIColor {
         }
     }
 }
+var lightBackgroundColor : UIColor {
+    return UIColor { (trait) -> UIColor in
+        switch trait.userInterfaceStyle {
+        case .dark:
+           // return UIColor(white: 0.3, alpha: 0.5)
+            return  UIColor(white: 0, alpha: 0.5)
+        default:
+            return  UIColor(white: 0, alpha: 0.5)
+        }
+    }
+}

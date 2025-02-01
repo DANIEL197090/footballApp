@@ -7,7 +7,7 @@
 
 import UIKit
 protocol TeamCellDelegate: AnyObject {
-    func didSelectEachTeam(parentIndex: Int, playersList: [Player])
+    func didSelectEachTeam(clubImage: String, parentIndex: Int, playersList: [Player])
 }
 
 class TeamsCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -73,7 +73,7 @@ class TeamsCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVie
         return CGSize(width: itemWidth, height: 150) // Square boxes
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        var players = teamList[indexPath.row].squad
-        delegate?.didSelectEachTeam(parentIndex: indexPath.item, playersList: players)
+        let players = teamList[indexPath.row].squad
+        delegate?.didSelectEachTeam(clubImage: teamList[indexPath.row].crest, parentIndex: indexPath.item, playersList: players)
         }
 }

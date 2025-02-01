@@ -36,10 +36,10 @@ extension CompetitionOverViewController: UICollectionViewDataSource, UICollectio
     }
 
 extension CompetitionOverViewController : TeamCellDelegate {
-    func didSelectEachTeam(parentIndex: Int, playersList: [Player]) {
+    func didSelectEachTeam(clubImage: String, parentIndex: Int, playersList: [Player]) {
         print("Clicked on \(playersList) inside Parent Index \(parentIndex)")
-        let controller = PlayersViewController(playersList: playersList)
-        let sheetController = createSheetViewController(with: controller, sizes: [.fixed(500), .fixed(800)])
+        let controller = PlayersViewController(playersList: playersList, clubImage: clubImage)
+        let sheetController = createSheetViewController(with: controller, sizes: [.fixed(600), .fixed(800)])
         self.present(sheetController, animated: false)
     }
 }

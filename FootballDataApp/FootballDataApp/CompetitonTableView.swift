@@ -21,9 +21,9 @@ extension CompetitionViewController: UITableViewDataSource, UITableViewDelegate 
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let competitionName =  competitions[indexPath.row].name
+        let competitionFullName =  competitions[indexPath.row].name
         let competitionCode =  competitions[indexPath.row].code
-        let controller = CompetitionOverViewController(competitionName: competitionCode)
+        let controller = CompetitionOverViewController(competitionName: competitionCode, competitionFullname: competitionFullName)
         controller.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(controller, animated: true)
     }
