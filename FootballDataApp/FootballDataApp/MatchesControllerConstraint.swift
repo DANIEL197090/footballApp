@@ -6,14 +6,14 @@
 //
 
 import UIKit
-extension CompetitionViewController {
+extension  MatchesViewController {
     func setupViews() {
-        view.addSubview(competitiontableView)
+        view.addSubview(matchesTableView)
         NSLayoutConstraint.activate([
-            competitiontableView.topAnchor.constraint(equalTo:  view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            competitiontableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            competitiontableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            competitiontableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+            matchesTableView.topAnchor.constraint(equalTo:  view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            matchesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            matchesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            matchesTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
         ])
     }
 }

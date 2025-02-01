@@ -9,14 +9,15 @@ class MatchesViewController: BaseViewController {
     let matchesTableView = UITableView()
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
         setupNavigationBar()
         setUpTableView()
     }
     
     private func setupNavigationBar() {
         let titleLabel = UILabel()
-        titleLabel.text = "Matches"
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        titleLabel.text = "Today's Fixtures"
+        titleLabel.font = UIFont(name: AppFonts.montserratBold.font, size: 16)
         titleLabel.textColor = .label
         
         let titleView = UIView()
@@ -36,8 +37,8 @@ class MatchesViewController: BaseViewController {
         // Setup table view
         matchesTableView.delegate = self
         matchesTableView.dataSource = self
-        matchesTableView.rowHeight = 50
-        matchesTableView.separatorColor = backgroundSystemColor
+        matchesTableView.rowHeight = 100
+        matchesTableView.separatorColor = .gray
         matchesTableView.backgroundColor =  .systemBackground
         matchesTableView.register(MatchesCell.self, forCellReuseIdentifier: MatchesCell.identifier)
         matchesTableView.translatesAutoresizingMaskIntoConstraints = false
