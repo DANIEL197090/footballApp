@@ -9,11 +9,12 @@ import Foundation
 
 // MARK: - StandingsResponse
 struct StandingsResponse: Codable {
-    let filters: StandingsFilters
-    let area: StandingsArea
-    let competition: StandingsCompetition
-    let season: StandingsSeason
-    let standings: [Standing]
+    let filters: StandingsFilters?
+    let area: StandingsArea?
+    let competition: StandingsCompetition?
+    let season: StandingsSeason?
+    let standings: [Standing]?
+    let message: String?
 }
 
 // MARK: - Filters

@@ -18,11 +18,12 @@ extension CompetitionViewController: UITableViewDataSource, UITableViewDelegate 
         cell.configure(withTitle: "\(indexPath.row + 1). \(competitionName)")
         // Add a forward arrow accessory
                cell.accessoryType = .disclosureIndicator // Default iOS arrow
-               
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = CompetitionOverViewController()
+        let competitionName =  competitions[indexPath.row].name
+        let competitionCode =  competitions[indexPath.row].code
+        let controller = CompetitionOverViewController(competitionName: competitionCode)
         controller.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(controller, animated: true)
     }

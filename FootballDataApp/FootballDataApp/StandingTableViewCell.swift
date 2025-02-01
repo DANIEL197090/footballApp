@@ -39,8 +39,8 @@ class StandingsCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(withTitle: String, numberScores: String) {
-        clubNameLabel.text = withTitle
-        numbersScoresLabel.text = numberScores
+    func configure(clubName: String, standings: String) {
+        clubNameLabel.text = clubName
+        numbersScoresLabel.text = standings
     }
 }

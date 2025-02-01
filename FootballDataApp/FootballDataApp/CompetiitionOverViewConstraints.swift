@@ -24,7 +24,7 @@ extension CompetitionOverViewController {
             buttonStack.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: appLeadingConstraint),
             buttonStack.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: appTrailingConstraint),
             
-            competitionOverViewCollectionView.topAnchor.constraint(equalTo: buttonStack.bottomAnchor, constant: 5),
+            competitionOverViewCollectionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 10),
             competitionOverViewCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             competitionOverViewCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             competitionOverViewCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)

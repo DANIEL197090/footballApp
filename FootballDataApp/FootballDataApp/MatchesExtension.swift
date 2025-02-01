@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Foundation
 extension MatchesViewController:TodayFixturesViewModelDelegate {
     func didReceiveTodayFixturessResponse(response: TodayMatchesResponse?, statusCode: Int) {
         if statusCode == 200 {

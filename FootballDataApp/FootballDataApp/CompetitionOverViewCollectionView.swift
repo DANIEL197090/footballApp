@@ -17,6 +17,7 @@ extension CompetitionOverViewController: UICollectionViewDataSource, UICollectio
         switch indexPath.row {
         case 0:
             guard let cell =   competitionOverViewCollectionView.dequeueReusableCell(withReuseIdentifier: TableCell.identifier, for: indexPath) as? TableCell else { return UICollectionViewCell() }
+            cell.teamStanding = standings
             return cell
         case 1:
             guard let cell =   competitionOverViewCollectionView.dequeueReusableCell(withReuseIdentifier: FixturesCell.identifier, for: indexPath) as? FixturesCell else { return UICollectionViewCell() }

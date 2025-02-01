@@ -17,6 +17,11 @@
 		042A04D42D4E087C0025239D /* TeamsCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A04D32D4E087C0025239D /* TeamsCells.swift */; };
 		042A04D62D4E11DA0025239D /* StandingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A04D52D4E11DA0025239D /* StandingTableViewCell.swift */; };
 		042A04D92D4E17D10025239D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 042A04D82D4E17D10025239D /* SDWebImage */; };
+		042A04DB2D4E19100025239D /* AllTeamsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A04DA2D4E19100025239D /* AllTeamsCell.swift */; };
+		042A04DE2D4E20520025239D /* FittedSheets in Frameworks */ = {isa = PBXBuildFile; productRef = 042A04DD2D4E20520025239D /* FittedSheets */; };
+		042A04E12D4E20A50025239D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 042A04E02D4E20A50025239D /* Lottie */; };
+		042A04E32D4E23950025239D /* CompetitionOverViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A04E22D4E23950025239D /* CompetitionOverViewExtension.swift */; };
+		042A04E52D4E329E0025239D /* TeamsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A04E42D4E329E0025239D /* TeamsModel.swift */; };
 		0435ECD12D4BC4BA00EE2BA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ECD02D4BC4BA00EE2BA1 /* AppDelegate.swift */; };
 		0435ECD32D4BC4BA00EE2BA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ECD22D4BC4BA00EE2BA1 /* SceneDelegate.swift */; };
 		0435ECD52D4BC4BA00EE2BA1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ECD42D4BC4BA00EE2BA1 /* TabBarController.swift */; };
@@ -85,6 +90,9 @@
 		042A04D12D4E08720025239D /* FixturesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixturesCell.swift; sourceTree = "<group>"; };
 		042A04D32D4E087C0025239D /* TeamsCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsCells.swift; sourceTree = "<group>"; };
 		042A04D52D4E11DA0025239D /* StandingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingTableViewCell.swift; sourceTree = "<group>"; };
+		042A04DA2D4E19100025239D /* AllTeamsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTeamsCell.swift; sourceTree = "<group>"; };
+		042A04E22D4E23950025239D /* CompetitionOverViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionOverViewExtension.swift; sourceTree = "<group>"; };
+		042A04E42D4E329E0025239D /* TeamsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsModel.swift; sourceTree = "<group>"; };
 		0435ECCD2D4BC4BA00EE2BA1 /* FootballDataApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballDataApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0435ECD02D4BC4BA00EE2BA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0435ECD22D4BC4BA00EE2BA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,7 +143,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042A04DE2D4E20520025239D /* FittedSheets in Frameworks */,
 				042A04D92D4E17D10025239D /* SDWebImage in Frameworks */,
+				042A04E12D4E20A50025239D /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +324,7 @@
 			children = (
 				0435ED222D4C7A9A00EE2BA1 /* CompetitionModel.swift */,
 				0435ED442D4D191F00EE2BA1 /* CompetitionStandingsModel.swift */,
+				042A04E42D4E329E0025239D /* TeamsModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -366,6 +377,8 @@
 				042A04D12D4E08720025239D /* FixturesCell.swift */,
 				042A04D32D4E087C0025239D /* TeamsCells.swift */,
 				042A04D52D4E11DA0025239D /* StandingTableViewCell.swift */,
+				042A04DA2D4E19100025239D /* AllTeamsCell.swift */,
+				042A04E22D4E23950025239D /* CompetitionOverViewExtension.swift */,
 			);
 			name = CompetitionOverView;
 			sourceTree = "<group>";
@@ -400,6 +413,8 @@
 			name = FootballDataApp;
 			packageProductDependencies = (
 				042A04D82D4E17D10025239D /* SDWebImage */,
+				042A04DD2D4E20520025239D /* FittedSheets */,
+				042A04E02D4E20A50025239D /* Lottie */,
 			);
 			productName = FootballDataApp;
 			productReference = 0435ECCD2D4BC4BA00EE2BA1 /* FootballDataApp.app */;
@@ -475,6 +490,8 @@
 			mainGroup = 0435ECC42D4BC4BA00EE2BA1;
 			packageReferences = (
 				042A04D72D4E17D10025239D /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				042A04DC2D4E20520025239D /* XCRemoteSwiftPackageReference "FittedSheets" */,
+				042A04DF2D4E20A50025239D /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 0435ECCE2D4BC4BA00EE2BA1 /* Products */;
 			projectDirPath = "";
@@ -525,6 +542,7 @@
 				0435ED322D4C83AD00EE2BA1 /* CompetitionViewModel.swift in Sources */,
 				0435ED0A2D4C5DAC00EE2BA1 /* CustomNavigation.swift in Sources */,
 				0435ED102D4C68D400EE2BA1 /* Colors.swift in Sources */,
+				042A04E32D4E23950025239D /* CompetitionOverViewExtension.swift in Sources */,
 				042A04CC2D4DFD8E0025239D /* MatchesExtension.swift in Sources */,
 				0435ED1E2D4C6E0C00EE2BA1 /* Fonts.swift in Sources */,
 				0435ED452D4D191F00EE2BA1 /* CompetitionStandingsModel.swift in Sources */,
@@ -544,6 +562,7 @@
 				0435ED3C2D4C8D3F00EE2BA1 /* CompetitionOverViewController.swift in Sources */,
 				042A04CE2D4E04D30025239D /* CompetitionOverViewCollectionView.swift in Sources */,
 				0435ED292D4C7B5500EE2BA1 /* HttpService.swift in Sources */,
+				042A04E52D4E329E0025239D /* TeamsModel.swift in Sources */,
 				0435ECD52D4BC4BA00EE2BA1 /* TabBarController.swift in Sources */,
 				0435ED0D2D4C63AB00EE2BA1 /* Extensions.swift in Sources */,
 				0435ECD12D4BC4BA00EE2BA1 /* AppDelegate.swift in Sources */,
@@ -555,6 +574,7 @@
 				0435ED412D4D184300EE2BA1 /* CompetitionsStandingsResource.swift in Sources */,
 				0435ED3E2D4C8D6B00EE2BA1 /* CompetiitionOverViewConstraints.swift in Sources */,
 				042A04D42D4E087C0025239D /* TeamsCells.swift in Sources */,
+				042A04DB2D4E19100025239D /* AllTeamsCell.swift in Sources */,
 				0435ED122D4C6A8F00EE2BA1 /* CompetitonCell.swift in Sources */,
 				0435ED152D4C6AC500EE2BA1 /* CompetitonTableView.swift in Sources */,
 				0435ED472D4D2E9800EE2BA1 /* MatchesControllerConstraint.swift in Sources */,
@@ -917,6 +937,22 @@
 				minimumVersion = 5.20.0;
 			};
 		};
+		042A04DC2D4E20520025239D /* XCRemoteSwiftPackageReference "FittedSheets" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gordontucker/FittedSheets";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.1;
+			};
+		};
+		042A04DF2D4E20A50025239D /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -924,6 +960,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 042A04D72D4E17D10025239D /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		042A04DD2D4E20520025239D /* FittedSheets */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 042A04DC2D4E20520025239D /* XCRemoteSwiftPackageReference "FittedSheets" */;
+			productName = FittedSheets;
+		};
+		042A04E02D4E20A50025239D /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 042A04DF2D4E20A50025239D /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 

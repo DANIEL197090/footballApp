@@ -7,6 +7,16 @@
 
 import UIKit
 class CompetitionOverViewController: BaseViewController {
+    var competitionName: String
+    var standings: [TeamStanding] = []
+    init(competitionName: String) {
+        self.competitionName = competitionName
+        super.init(nibName: nil, bundle: nil)
+    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    let competitionsStandingsViewModel = CompetitionsStandingsViewModel()
     lazy var backButton: UIButton = {
         let button = UIButton.backButtonDesign()
         button.addTarget(self, action: #selector(didtapOnBackButton), for: .touchUpInside)
@@ -47,6 +57,7 @@ class CompetitionOverViewController: BaseViewController {
     func scrollTo(number: Int) {
         let indexPath = IndexPath(item: number, section: 0)
         competitionOverViewCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        competitionOverViewCollectionView.isPagingEnabled = false
     }
     func showTable() {
         tableButton.setTitleColor(appTextColor, for: .normal)
@@ -99,14 +110,27 @@ class CompetitionOverViewController: BaseViewController {
             isScrollEnabled: true,
             showsVerticalScrollIndicator: false,
             showsHorizontalScrollIndicator: false,
-            backgroundColor: .systemBackground
+            backgroundColor: backgroundSystemColor
         )
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-       setupViews()
-       registerCells()
-       showTable()
+        setupViews()
+        registerCells()
+        showTable()
+        competitionsStandingsViewModel.delegate = self
+        getAllCompetitions()
+        competitionOverViewCollectionView.isScrollEnabled = false
+        competitionOverViewCollectionView.isPagingEnabled = false
+    }
+    
+    func getAllCompetitions() {
+        if InternetConnectionManager.isConnectedToNetwork(){
+            competitionOverViewCollectionView.isHidden = true
+            competitionsStandingsViewModel.getAllCompetitionsStandings(name: competitionName)
+        } else {
+            Toast.shared.showToastWithTItle("\(showNoInternetConnectionHeader()), \(showNoInternetConnection())", type: .error)
+        }
     }
     //MARK: -cell registration
     func registerCells(){
@@ -117,16 +141,15 @@ class CompetitionOverViewController: BaseViewController {
     //MARK: - scroll view will end dragging
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let pageNumber = Int(targetContentOffset.pointee.x / view.frame.width)
-        //MARK: - move current dot color to current position
-        competitionOverViewCollectionView.isPagingEnabled = true
+        
         if pageNumber == 0 {
-           showTable()
+            showTable()
         }
         else if pageNumber == 1 {
-           showFixtures()
+            showFixtures()
         }
         else  {
-          showTeams()
+            showTeams()
         }
         competitionOverViewCollectionView.isPagingEnabled = true
     }

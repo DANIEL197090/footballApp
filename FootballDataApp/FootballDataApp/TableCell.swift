@@ -8,6 +8,11 @@
 
 import UIKit
 class TableCell: UICollectionViewCell, UITableViewDataSource, UITableViewDelegate {
+    var teamStanding: [TeamStanding] = [] {
+        didSet {
+            standingstableView.reloadData()
+        }
+    }
     
     static var identifier = "tableCell"
     
@@ -35,7 +40,7 @@ class TableCell: UICollectionViewCell, UITableViewDataSource, UITableViewDelegat
         // Anchor collectionView to top, bottom, left, and right of contentView
         NSLayoutConstraint.activate([
             standingstableView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 100),
-            standingstableView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -70),
+            standingstableView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -100),
             standingstableView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             standingstableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
@@ -49,12 +54,13 @@ class TableCell: UICollectionViewCell, UITableViewDataSource, UITableViewDelegat
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  20
+        return  teamStanding.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: StandingsCell.identifier, for: indexPath) as! StandingsCell
-        cell.configure(withTitle: "\(indexPath.row). Mancity", numberScores: " 20  20  20  20")
+        let standingDetails = teamStanding[indexPath.row]
+        cell.configure(clubName: "\(indexPath.row + 1). \(standingDetails.team.shortName )", standings: "\(standingDetails.playedGames)  \(standingDetails.won)  \(standingDetails.lost)  \(standingDetails.draw)  \(standingDetails.points)")
         return cell
     }
 }
