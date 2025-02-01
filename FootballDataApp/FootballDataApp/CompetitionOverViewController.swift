@@ -9,6 +9,7 @@ import UIKit
 class CompetitionOverViewController: BaseViewController {
     var competitionName: String
     var standings: [TeamStanding] = []
+    var teamList: [Teams] = []
     init(competitionName: String) {
         self.competitionName = competitionName
         super.init(nibName: nil, bundle: nil)
@@ -17,6 +18,8 @@ class CompetitionOverViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     let competitionsStandingsViewModel = CompetitionsStandingsViewModel()
+    let teamsViewModel = TeamsViewModel()
+    
     lazy var backButton: UIButton = {
         let button = UIButton.backButtonDesign()
         button.addTarget(self, action: #selector(didtapOnBackButton), for: .touchUpInside)
@@ -32,7 +35,6 @@ class CompetitionOverViewController: BaseViewController {
         let view =  UIView.viewDesign(cornerRadius: 0, backgroundColor: .systemBackground)
         view.isUserInteractionEnabled = true
         view.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        view.heightAnchor.constraint(equalToConstant: 80).isActive = true
         view.layer.shadowColor = AppColors.shadowColor.color.cgColor
         view.layer.shadowOpacity = 0.09
         view.layer.shadowOffset = CGSize(width: 0, height: 0)  // Shadow around the entire view
@@ -119,7 +121,9 @@ class CompetitionOverViewController: BaseViewController {
         registerCells()
         showTable()
         competitionsStandingsViewModel.delegate = self
+        teamsViewModel.delegate = self
         getAllCompetitions()
+        getAllTeams()
         competitionOverViewCollectionView.isScrollEnabled = false
         competitionOverViewCollectionView.isPagingEnabled = false
     }
@@ -128,6 +132,14 @@ class CompetitionOverViewController: BaseViewController {
         if InternetConnectionManager.isConnectedToNetwork(){
             competitionOverViewCollectionView.isHidden = true
             competitionsStandingsViewModel.getAllCompetitionsStandings(name: competitionName)
+        } else {
+            Toast.shared.showToastWithTItle("\(showNoInternetConnectionHeader()), \(showNoInternetConnection())", type: .error)
+        }
+    }
+    func getAllTeams() {
+        if InternetConnectionManager.isConnectedToNetwork(){
+            competitionOverViewCollectionView.isHidden = true
+            teamsViewModel.getAllTeamsUsingCompetition(code:competitionName)
         } else {
             Toast.shared.showToastWithTItle("\(showNoInternetConnectionHeader()), \(showNoInternetConnection())", type: .error)
         }

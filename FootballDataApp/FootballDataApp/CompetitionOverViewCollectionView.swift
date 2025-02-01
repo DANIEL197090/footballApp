@@ -24,6 +24,7 @@ extension CompetitionOverViewController: UICollectionViewDataSource, UICollectio
             return cell
         default:
             guard let cell =   competitionOverViewCollectionView.dequeueReusableCell(withReuseIdentifier: TeamsCell.identifier, for: indexPath) as? TeamsCell else { return UICollectionViewCell() }
+            cell.teamList = teamList
             return cell
         }
     }

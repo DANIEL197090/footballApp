@@ -22,6 +22,8 @@
 		042A04E12D4E20A50025239D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 042A04E02D4E20A50025239D /* Lottie */; };
 		042A04E32D4E23950025239D /* CompetitionOverViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A04E22D4E23950025239D /* CompetitionOverViewExtension.swift */; };
 		042A04E52D4E329E0025239D /* TeamsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A04E42D4E329E0025239D /* TeamsModel.swift */; };
+		042A04E72D4E4CCB0025239D /* TeamsResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A04E62D4E4CCB0025239D /* TeamsResource.swift */; };
+		042A04E92D4E4DE00025239D /* TeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042A04E82D4E4DE00025239D /* TeamsViewModel.swift */; };
 		0435ECD12D4BC4BA00EE2BA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ECD02D4BC4BA00EE2BA1 /* AppDelegate.swift */; };
 		0435ECD32D4BC4BA00EE2BA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ECD22D4BC4BA00EE2BA1 /* SceneDelegate.swift */; };
 		0435ECD52D4BC4BA00EE2BA1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0435ECD42D4BC4BA00EE2BA1 /* TabBarController.swift */; };
@@ -93,6 +95,8 @@
 		042A04DA2D4E19100025239D /* AllTeamsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTeamsCell.swift; sourceTree = "<group>"; };
 		042A04E22D4E23950025239D /* CompetitionOverViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionOverViewExtension.swift; sourceTree = "<group>"; };
 		042A04E42D4E329E0025239D /* TeamsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsModel.swift; sourceTree = "<group>"; };
+		042A04E62D4E4CCB0025239D /* TeamsResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsResource.swift; sourceTree = "<group>"; };
+		042A04E82D4E4DE00025239D /* TeamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewModel.swift; sourceTree = "<group>"; };
 		0435ECCD2D4BC4BA00EE2BA1 /* FootballDataApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootballDataApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0435ECD02D4BC4BA00EE2BA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0435ECD22D4BC4BA00EE2BA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -334,6 +338,7 @@
 			children = (
 				0435ED252D4C7B3200EE2BA1 /* CompetitionResource.swift */,
 				0435ED402D4D184300EE2BA1 /* CompetitionsStandingsResource.swift */,
+				042A04E62D4E4CCB0025239D /* TeamsResource.swift */,
 			);
 			name = DataResource;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 			children = (
 				0435ED312D4C83AC00EE2BA1 /* CompetitionViewModel.swift */,
 				0435ED422D4D18E200EE2BA1 /* CompetitionStandingsViewModel.swift */,
+				042A04E82D4E4DE00025239D /* TeamsViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -546,10 +552,12 @@
 				042A04CC2D4DFD8E0025239D /* MatchesExtension.swift in Sources */,
 				0435ED1E2D4C6E0C00EE2BA1 /* Fonts.swift in Sources */,
 				0435ED452D4D191F00EE2BA1 /* CompetitionStandingsModel.swift in Sources */,
+				042A04E92D4E4DE00025239D /* TeamsViewModel.swift in Sources */,
 				0435ED172D4C6B2600EE2BA1 /* CompetitionLayoutConstraint.swift in Sources */,
 				0435ED382D4C884300EE2BA1 /* CompetitionExtension.swift in Sources */,
 				042A04D62D4E11DA0025239D /* StandingTableViewCell.swift in Sources */,
 				0435ED072D4BDFF200EE2BA1 /* MatchesViewController.swift in Sources */,
+				042A04E72D4E4CCB0025239D /* TeamsResource.swift in Sources */,
 				0435ED492D4D2EB200EE2BA1 /* MatchesControllerTableView.swift in Sources */,
 				042A04D22D4E08720025239D /* FixturesCell.swift in Sources */,
 				0435ED2F2D4C830300EE2BA1 /* HelperFunctions.swift in Sources */,

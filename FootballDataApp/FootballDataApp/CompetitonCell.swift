@@ -10,7 +10,6 @@ class CompetitionCell: UITableViewCell {
     static var identifier = "competitionCell"
     lazy var titleLabel: UILabel = {
         let label = UILabel.customLabel(text: "", fontSize: 14, fontFamily: AppFonts.montserratRegular.font, textAlignment: .center, numberofLines: 0, textColor: appTextColor)
-        label.heightAnchor.constraint(equalToConstant: 35).isActive = true
         return label
     }()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -18,7 +17,7 @@ class CompetitionCell: UITableViewCell {
          // Configure title label
         contentView.addSubview(titleLabel)
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])
     }

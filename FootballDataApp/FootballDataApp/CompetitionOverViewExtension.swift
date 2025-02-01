@@ -6,7 +6,16 @@
 //
 
 import Foundation
-extension CompetitionOverViewController: CompetitionsStandingsViewModelDelegate {
+extension CompetitionOverViewController: CompetitionsStandingsViewModelDelegate, TeamsViewModelDelegate {
+    func didReceiveCompetitionsStandingsResponse(response: TeamsResponse?, statusCode: Int) {
+        if statusCode == 200 {
+            teamList = response?.teams ?? []
+        }
+        if statusCode == 400 {
+            Toast.shared.showToastWithTItle("No matches found", type: .error)
+        }
+    }
+    
     func didReceiveCompetitionsStandingsResponse(response: StandingsResponse?, statusCode: Int) {
         if statusCode == 200 {
             competitionOverViewCollectionView.isHidden = false

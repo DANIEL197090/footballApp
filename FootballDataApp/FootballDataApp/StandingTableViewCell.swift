@@ -20,7 +20,6 @@ class StandingsCell: UITableViewCell {
     }()
     lazy var labelStack: UIStackView = {
         let stackView = UIStackView.customHorizontalStackView(distribution: .fillEqually, views: [clubNameLabel, numbersScoresLabel], spacing: 0)
-        stackView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         return stackView
     }()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -28,8 +27,8 @@ class StandingsCell: UITableViewCell {
          // Configure title label
         contentView.addSubViews(labelStack)
         NSLayoutConstraint.activate([
-            labelStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            labelStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            labelStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            labelStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             labelStack.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
             
         ])

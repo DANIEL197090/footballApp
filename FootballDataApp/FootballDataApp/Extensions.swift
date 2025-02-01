@@ -152,7 +152,7 @@ extension UIImageView {
     class func customImage(image: UIImage) -> UIImageView {
         let imageView =  UIImageView()
         imageView.image = image
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.masksToBounds = true
         return imageView

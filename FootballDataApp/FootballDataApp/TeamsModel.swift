@@ -7,7 +7,7 @@
 
 import Foundation
 // MARK: - Premier League Data Model
-struct PremierLeagueData: Codable {
+struct TeamsResponse: Codable {
     let count: Int
     let filters: TeamsFilters
     let competition: TeamsCompetition
@@ -26,7 +26,7 @@ struct TeamsCompetition: Codable {
     let name: String
     let code: String
     let type: String
-    let emblem: String
+    let emblem: String?
 }
 
 // MARK: - Season
@@ -34,7 +34,7 @@ struct TeamsSeason: Codable {
     let id: Int
     let startDate: String
     let endDate: String
-    let currentMatchday: Int
+    let currentMatchday: Int?
     let winner: String?
 }
 
@@ -48,7 +48,7 @@ struct Teams: Codable {
     let crest: String
     let address: String
     let website: String
-    let founded: Int
+    let founded: Int?
     let clubColors: String
     let venue: String
     let runningCompetitions: [TeamsCompetition]
@@ -85,7 +85,7 @@ struct Contract: Codable {
 struct Player: Codable {
     let id: Int
     let name: String
-    let position: String
-    let dateOfBirth: String
+    let position: String?
+    let dateOfBirth: String?
     let nationality: String
 }

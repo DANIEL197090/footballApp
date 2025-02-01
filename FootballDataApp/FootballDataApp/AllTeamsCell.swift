@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import SDWebImage
 class AllTeamsCell: UICollectionViewCell {
     static var identifier = "AllTeamsCell"
+   
     lazy var clubImageView:  UIImageView  = {
         let imageView =  UIImageView.customImage(image: UIImage(named: "matchesIcon")!)
         imageView.layer.masksToBounds = true
@@ -17,7 +19,6 @@ class AllTeamsCell: UICollectionViewCell {
     }()
     lazy var clubNameLabel: UILabel = {
         let label = UILabel.customLabel(text: "", fontSize: 14, fontFamily: AppFonts.montserratRegular.font, textAlignment: .center, numberofLines: 0, textColor: appTextColor)
-        label.heightAnchor.constraint(equalToConstant: 35).isActive = true
         return label
     }()
     lazy var detailsStack: UIStackView = {
@@ -46,7 +47,8 @@ class AllTeamsCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with text: String) {
-        clubNameLabel.text = text
+    func configure(with teamData: Teams) {
+        clubNameLabel.text = teamData.name
+        clubImageView.sd_setImage(with: URL(string: teamData.crest), placeholderImage: UIImage(named: "matchesIcon"))
     }
 }

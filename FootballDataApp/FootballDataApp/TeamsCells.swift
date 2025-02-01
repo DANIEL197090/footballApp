@@ -7,6 +7,11 @@
 
 import UIKit
 class TeamsCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    var teamList: [Teams] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     static var identifier = "teamsCell"
     
@@ -17,8 +22,6 @@ class TeamsCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVie
         layout.minimumLineSpacing = 5 // Space between rows
         return UICollectionView(frame: .zero, collectionViewLayout: layout)
     }()
-    
-    private let sampleData = Array(1...9) // Example data (9 items for 3 rows)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,12 +51,13 @@ class TeamsCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionVie
     
     // MARK: - CollectionView DataSource Methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sampleData.count
+        return teamList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AllTeamsCell.identifier, for: indexPath) as! AllTeamsCell
-        cell.configure(with: "\(sampleData[indexPath.item])")
+        let teams = teamList[indexPath.row]
+        cell.configure(with: teams)
         return cell
     }
     
