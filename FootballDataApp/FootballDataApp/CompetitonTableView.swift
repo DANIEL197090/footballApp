@@ -21,7 +21,10 @@ extension CompetitionViewController: UITableViewDataSource, UITableViewDelegate 
                
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = CompetitionOverViewController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
     // MARK: - Custom Header View
         func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
             let headerView = UIView()

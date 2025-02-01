@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Foundation
 struct CompetitionsResource {
     func getResponse(completionHandler: @escaping (_ result: CompetitionsResponse?,_ statusCode: Int) -> Void) {
         let endPoint = AppEndpoints.competitionEndPoint

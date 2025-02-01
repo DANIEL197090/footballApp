@@ -4,13 +4,48 @@
 //
 //  Created by Ifeanyi Mbata on 1/30/25.
 //
-
 import UIKit
-
 class MatchesViewController: BaseViewController {
-
+    let matchesTableView = UITableView()
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        setupNavigationBar()
+        setUpTableView()
     }
+    
+    private func setupNavigationBar() {
+        let titleLabel = UILabel()
+        titleLabel.text = "Matches"
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        titleLabel.textColor = .label
+        
+        let titleView = UIView()
+        titleView.backgroundColor = .red
+        titleView.addSubview(titleLabel)
+
+        // Adjust the label's position within the view
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            titleLabel.leadingAnchor.constraint(equalTo: titleView.leadingAnchor),
+            titleLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 0)
+        ])
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleView)
+    }
+    func setUpTableView() {
+        // Setup table view
+        matchesTableView.delegate = self
+        matchesTableView.dataSource = self
+        matchesTableView.rowHeight = 50
+        matchesTableView.separatorColor = backgroundSystemColor
+        matchesTableView.backgroundColor =  .systemBackground
+        matchesTableView.register(MatchesCell.self, forCellReuseIdentifier: MatchesCell.identifier)
+        matchesTableView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    override func viewWillAppear(_ animated: Bool) {
+                self.navigationController?.isNavigationBarHidden = false
+                navigationController?.navigationBar.backgroundColor = .clear
+        self.navigationItem.setHidesBackButton(true, animated: true)
+    }
+
 }

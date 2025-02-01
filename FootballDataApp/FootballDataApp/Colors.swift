@@ -17,9 +17,11 @@ enum AppColors {
     case placeHolder
     case fairBlack
     case darkGreen
-    
+    case shadowColor
     var color: UIColor {
         switch self {
+        case .shadowColor:
+            return UIColor(hex: "#2F0948", alpha: 1.0)
         case .fairBlack:
             return  UIColor(hex: "#212121", alpha: 1.0)
         case .white:

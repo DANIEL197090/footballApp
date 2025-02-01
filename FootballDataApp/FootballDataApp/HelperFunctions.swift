@@ -18,3 +18,5 @@ func showNoInternetConnection() -> String {
 func showNoInternetConnectionHeader() -> String {
     return "No Internet Connection"
 }
+let appLeadingConstraint = CGFloat(20)
+let appTrailingConstraint = CGFloat(-20)

@@ -42,3 +42,86 @@ extension UILabel {
         return label
     }
 }
+extension  UIButton {
+    class func backButtonDesign() -> UIButton {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 32).isActive = true
+        button.layer.cornerRadius = 16
+        button.setImage(UIImage(systemName: "arrow.left"), for: .normal)
+        button.tintColor = appTextColor
+        return button
+    }
+    class func plainButtonDesign(withText: String, backgroundColor: UIColor, titleColor: UIColor, borderWidth: CGFloat, buttonRadius: CGFloat, buttonFontFamily: String, buttonFontSize: CGFloat, buttonHeight: CGFloat ) -> UIButton {
+        let button = UIButton()
+        button.setTitle(withText, for: .normal)
+        button.backgroundColor = backgroundColor
+        button.setTitleColor(titleColor, for: .normal)
+        button.layer.cornerRadius = buttonRadius
+        button.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
+        button.layer.borderWidth = borderWidth
+        button.titleLabel?.font = UIFont(name: buttonFontFamily, size:  buttonFontSize)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }
+}
+public extension UIViewController {
+    func pop(numberOfTimes: Int) {
+        guard let navigationController = navigationController else {
+            print("No navigation controller")
+            return
+        }
+        let viewControllers = navigationController.viewControllers
+        let index = numberOfTimes + 1
+        if viewControllers.count >= index {
+            navigationController.popToViewController(viewControllers[viewControllers.count - index], animated: true)
+        }
+    }
+}
+extension UIView {
+    class func viewDesign(cornerRadius: CGFloat, backgroundColor: UIColor) ->UIView {
+        let view =  UIView()
+        view.backgroundColor =  backgroundColor
+        view.layer.cornerRadius = cornerRadius
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }
+}
+extension UIStackView {
+    class func customVerticalStackView(distribution: UIStackView.Distribution, views: [UIView], spacing: CGFloat) -> UIStackView {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.backgroundColor = .clear
+        stackView.axis = .vertical
+        stackView.distribution = distribution
+        stackView.spacing = spacing
+        
+        // Add each view to the stackView
+        views.forEach { view in
+            stackView.addArrangedSubview(view)
+        }
+        
+        return stackView
+    }
+    class func customHorizontalStackView(distribution: Distribution, views: [UIView], spacing: CGFloat) ->  UIStackView {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.backgroundColor = .clear
+        stackView.axis = .horizontal
+        stackView.distribution = distribution
+        stackView.spacing = spacing
+        
+        // Add each view to the stackView
+        views.forEach { view in
+            stackView.addArrangedSubview(view)
+        }
+        
+        return stackView
+    }
+}
+extension UIView {
+    func addSubViews(_ views: UIView...) {
+        views.forEach{self.addSubview($0)}
+    }
+}
