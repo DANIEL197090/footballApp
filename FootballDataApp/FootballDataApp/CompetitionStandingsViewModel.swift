@@ -6,11 +6,11 @@
 //
 
 import Foundation
-protocol CompetitionsStandingsModelDelegate: AnyObject {
+protocol CompetitionsStandingsViewModelDelegate: AnyObject {
     func didReceiveCompetitionsStandingsResponse(response: StandingsResponse?, statusCode: Int)
 }
-class  CompetitionsStandingsModel {
-    weak var delegate:  CompetitionsStandingsModelDelegate?
+class  CompetitionsStandingsViewModel {
+    weak var delegate:  CompetitionsStandingsViewModelDelegate?
     func getAllCompetitionsStandings(name: String) {
         let resource =  CompetitionsStandingsResource()
         resource.getResponse(competitionName: name) { result, statusCode in

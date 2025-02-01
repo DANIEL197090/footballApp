@@ -9,17 +9,16 @@ import UIKit
 extension MatchesViewController: UITableViewDataSource, UITableViewDelegate  {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  50
+        return  todayFixtures.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MatchesCell.identifier, for: indexPath) as! MatchesCell
+        let  todayFixtures =  todayFixtures[indexPath.row]
+        cell.configure(data:  todayFixtures)
         return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = CompetitionOverViewController()
-        navigationController?.pushViewController(controller, animated: true)
-    }
+   
     // MARK: - Custom Header View
         func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
             let headerView = UIView()

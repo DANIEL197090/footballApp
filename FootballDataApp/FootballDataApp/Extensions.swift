@@ -125,3 +125,26 @@ extension UIView {
         views.forEach{self.addSubview($0)}
     }
 }
+func createCustomCollectionView (
+        dataSource: UICollectionViewDataSource,
+        delegate: UICollectionViewDelegate,
+        scrollDirection: UICollectionView.ScrollDirection = .vertical,
+        minimumLineSpacing: CGFloat = 15,
+        isScrollEnabled: Bool = true,
+        showsVerticalScrollIndicator: Bool = false,
+        showsHorizontalScrollIndicator: Bool = false,
+        backgroundColor: UIColor = .clear) -> UICollectionView {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = scrollDirection
+        layout.minimumLineSpacing = minimumLineSpacing
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.dataSource = dataSource
+        collectionView.delegate = delegate
+        collectionView.isPagingEnabled = false
+        collectionView.backgroundColor = backgroundColor
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.isScrollEnabled = isScrollEnabled
+        collectionView.showsVerticalScrollIndicator = showsVerticalScrollIndicator
+        collectionView.showsHorizontalScrollIndicator = showsHorizontalScrollIndicator
+        return collectionView
+}

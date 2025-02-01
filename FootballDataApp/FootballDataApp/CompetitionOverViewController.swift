@@ -74,6 +74,18 @@ class CompetitionOverViewController: BaseViewController {
     @objc func didtapOnBackButton() {
         pop(numberOfTimes: 1)
     }
+    lazy var competitionOverCollectionView: UICollectionView = {
+        return createCustomCollectionView(
+            dataSource: self,
+            delegate: self,
+            scrollDirection: .horizontal,
+            minimumLineSpacing: 16,
+            isScrollEnabled: true,
+            showsVerticalScrollIndicator: false,
+            showsHorizontalScrollIndicator: false,
+            backgroundColor: .clear
+        )
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
        setupViews()

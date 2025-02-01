@@ -7,11 +7,15 @@
 import UIKit
 class MatchesViewController: BaseViewController {
     let matchesTableView = UITableView()
+    var todayFixtures : [TodayMatches] = []
+    var todayFixturesViewModel = TodayFixturesViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
         setupNavigationBar()
+        todayFixturesViewModel.delegate  = self
         setUpTableView()
+        getTodayFixtures()
     }
     
     private func setupNavigationBar() {
@@ -48,5 +52,12 @@ class MatchesViewController: BaseViewController {
                 navigationController?.navigationBar.backgroundColor = .clear
         self.navigationItem.setHidesBackButton(true, animated: true)
     }
-
+    func getTodayFixtures() {
+        if InternetConnectionManager.isConnectedToNetwork(){
+            matchesTableView.isHidden = true
+            todayFixturesViewModel.getTodayFixtures()
+        } else {
+            Toast.shared.showToastWithTItle("\(showNoInternetConnectionHeader()), \(showNoInternetConnection())", type: .error)
+        }
+    }
 }

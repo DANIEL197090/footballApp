@@ -20,7 +20,7 @@ class MatchesCell: UITableViewCell {
         return label
     }()
     lazy var mdLabel: UILabel = {
-        let label = UILabel.customLabel(text: "MD 39", fontSize: 14, fontFamily: AppFonts.montserratRegular.font, textAlignment: .center, numberofLines: 0, textColor: appTextColor)
+        let label = UILabel.customLabel(text: "MD 39", fontSize: 14, fontFamily: AppFonts.montserratRegular.font, textAlignment: .center, numberofLines: 0, textColor: .gray)
         label.heightAnchor.constraint(equalToConstant: 35).isActive = true
         return label
     }()
@@ -30,12 +30,12 @@ class MatchesCell: UITableViewCell {
         return stackView
     }()
     lazy var homeTeamLabel: UILabel = {
-        let label = UILabel.customLabel(text: "Man City", fontSize: 14, fontFamily: AppFonts.montserratRegular.font, textAlignment: .center, numberofLines: 0, textColor: appTextColor)
+        let label = UILabel.customLabel(text: "Man City", fontSize: 14, fontFamily: AppFonts.montserratRegular.font, textAlignment: .left, numberofLines: 0, textColor: appTextColor)
         label.heightAnchor.constraint(equalToConstant: 35).isActive = true
         return label
     }()
     lazy var awayTeamLabel: UILabel = {
-        let label = UILabel.customLabel(text: "Man UTD", fontSize: 14, fontFamily: AppFonts.montserratRegular.font, textAlignment: .center, numberofLines: 0, textColor: appTextColor)
+        let label = UILabel.customLabel(text: "Man UTD", fontSize: 14, fontFamily: AppFonts.montserratRegular.font, textAlignment: .left, numberofLines: 0, textColor: appTextColor)
         label.heightAnchor.constraint(equalToConstant: 35).isActive = true
         return label
     }()
@@ -50,7 +50,7 @@ class MatchesCell: UITableViewCell {
         return label
     }()
     lazy var matchTimeLabel: UILabel = {
-        let label = UILabel.customLabel(text: "0", fontSize: 14, fontFamily: AppFonts.montserratRegular.font, textAlignment: .left, numberofLines: 0, textColor: appTextColor)
+        let label = UILabel.customLabel(text: "00`", fontSize: 14, fontFamily: AppFonts.montserratRegular.font, textAlignment: .left, numberofLines: 0, textColor: .gray)
         label.heightAnchor.constraint(equalToConstant: 35).isActive = true
         return label
     }()
@@ -88,7 +88,12 @@ class MatchesCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(withTitle: String) {
+    func configure(data: TodayMatches) {
+        timedLabel.text = data.status
+        timeLabel.text = extractTime(from: data.utcDate)
+        mdLabel.text = "MD \(data.matchday)"
+        homeTeamLabel.text = data.homeTeam.name
+        awayTeamLabel.text = data.awayTeam.name
         
     }
 }
