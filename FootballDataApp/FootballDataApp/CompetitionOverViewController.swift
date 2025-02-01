@@ -41,6 +41,14 @@ class CompetitionOverViewController: BaseViewController {
         return button
     }()
     @objc func didtapOnTableButton() {
+        showTable()
+        scrollTo(number: 0)
+    }
+    func scrollTo(number: Int) {
+        let indexPath = IndexPath(item: number, section: 0)
+        competitionOverViewCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+    func showTable() {
         tableButton.setTitleColor(appTextColor, for: .normal)
         fixturesButton.setTitleColor(.gray, for: .normal)
         teamButton.setTitleColor(.gray, for: .normal)
@@ -51,6 +59,10 @@ class CompetitionOverViewController: BaseViewController {
         return button
     }()
     @objc func didtapOnFixturesButton() {
+        showFixtures()
+        scrollTo(number: 1)
+    }
+    func showFixtures() {
         tableButton.setTitleColor(.gray, for: .normal)
         fixturesButton.setTitleColor(appTextColor, for: .normal)
         teamButton.setTitleColor(.gray, for: .normal)
@@ -62,6 +74,10 @@ class CompetitionOverViewController: BaseViewController {
         return button
     }()
     @objc func didtapOnTeamButton() {
+        showTeams()
+        scrollTo(number: 2)
+    }
+    func showTeams() {
         tableButton.setTitleColor(.gray, for: .normal)
         fixturesButton.setTitleColor(.gray, for: .normal)
         teamButton.setTitleColor(appTextColor, for: .normal)
@@ -74,21 +90,45 @@ class CompetitionOverViewController: BaseViewController {
     @objc func didtapOnBackButton() {
         pop(numberOfTimes: 1)
     }
-    lazy var competitionOverCollectionView: UICollectionView = {
-        return createCustomCollectionView(
+    lazy var competitionOverViewCollectionView: UICollectionView = {
+        return createCustomCollectionView (
             dataSource: self,
             delegate: self,
             scrollDirection: .horizontal,
-            minimumLineSpacing: 16,
+            minimumLineSpacing: 0,
             isScrollEnabled: true,
             showsVerticalScrollIndicator: false,
             showsHorizontalScrollIndicator: false,
-            backgroundColor: .clear
+            backgroundColor: .systemBackground
         )
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
        setupViews()
+       registerCells()
+       showTable()
+    }
+    //MARK: -cell registration
+    func registerCells(){
+        competitionOverViewCollectionView.register(TableCell.self, forCellWithReuseIdentifier: TableCell.identifier)
+        competitionOverViewCollectionView.register(FixturesCell.self, forCellWithReuseIdentifier: FixturesCell.identifier)
+        competitionOverViewCollectionView.register(TeamsCell.self, forCellWithReuseIdentifier: TeamsCell.identifier)
+    }
+    //MARK: - scroll view will end dragging
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let pageNumber = Int(targetContentOffset.pointee.x / view.frame.width)
+        //MARK: - move current dot color to current position
+        competitionOverViewCollectionView.isPagingEnabled = true
+        if pageNumber == 0 {
+           showTable()
+        }
+        else if pageNumber == 1 {
+           showFixtures()
+        }
+        else  {
+          showTeams()
+        }
+        competitionOverViewCollectionView.isPagingEnabled = true
     }
 }
 

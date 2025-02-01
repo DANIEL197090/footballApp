@@ -8,7 +8,7 @@
 import UIKit
 extension CompetitionOverViewController {
     func setupViews() {
-        view.addSubViews(viewStack)
+        view.addSubViews(viewStack, competitionOverViewCollectionView)
         topView.addSubview(backButton)
         headerView.addSubview(buttonStack)
         NSLayoutConstraint.activate([
@@ -23,6 +23,12 @@ extension CompetitionOverViewController {
             buttonStack.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 15),
             buttonStack.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: appLeadingConstraint),
             buttonStack.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: appTrailingConstraint),
+            
+            competitionOverViewCollectionView.topAnchor.constraint(equalTo: buttonStack.bottomAnchor, constant: 5),
+            competitionOverViewCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            competitionOverViewCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            competitionOverViewCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
+        
     }
 }

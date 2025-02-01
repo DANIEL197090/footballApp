@@ -23,6 +23,7 @@ extension CompetitionViewController: UITableViewDataSource, UITableViewDelegate 
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = CompetitionOverViewController()
+        controller.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(controller, animated: true)
     }
     // MARK: - Custom Header View
