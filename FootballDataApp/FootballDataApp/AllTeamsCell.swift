@@ -29,7 +29,7 @@ class AllTeamsCell: UICollectionViewCell {
         super.init(frame: frame)
         contentView.addSubViews(detailsStack)
         contentView.layer.cornerRadius = 5
-        contentView.backgroundColor = .systemBackground
+        contentView.backgroundColor = cellSystemColor
         contentView.layer.shadowColor = AppColors.shadowColor.color.cgColor
         contentView.layer.shadowOpacity = 0.09
         contentView.layer.shadowOffset = CGSize(width: 0, height: 0)  // Shadow around the entire view

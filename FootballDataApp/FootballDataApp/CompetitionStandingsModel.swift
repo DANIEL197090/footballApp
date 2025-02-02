@@ -45,7 +45,7 @@ struct StandingsSeason: Codable {
     let startDate: String
     let endDate: String
     let currentMatchday: Int?
-    let winner: String?
+    let winner: Winner?
 }
 
 // MARK: - Standing
@@ -78,11 +78,4 @@ struct Team: Codable {
     let shortName: String
     let tla: String
     let crest: String
-}
-
-// MARK: - JSON Decoding Example
-func decodeStandings(from jsonData: Data) -> StandingsResponse? {
-    let decoder = JSONDecoder()
-    decoder.keyDecodingStrategy = .convertFromSnakeCase
-    return try? decoder.decode(StandingsResponse.self, from: jsonData)
 }

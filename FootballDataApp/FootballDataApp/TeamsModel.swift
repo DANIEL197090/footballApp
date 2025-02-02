@@ -9,16 +9,11 @@ import Foundation
 // MARK: - Premier League Data Model
 struct TeamsResponse: Codable {
     let count: Int
-    let filters: TeamsFilters
     let competition: TeamsCompetition
-    let season: TeamsSeason
+    let season: TeamsSeason?
     let teams: [Teams]
 }
 
-// MARK: - Filters
-struct TeamsFilters: Codable {
-    let season: String
-}
 
 // MARK: - Competition
 struct TeamsCompetition: Codable {
@@ -35,9 +30,13 @@ struct TeamsSeason: Codable {
     let startDate: String
     let endDate: String
     let currentMatchday: Int?
-    let winner: String?
+    let winner: Winner?
 }
-
+struct Winner: Codable {
+    let id: Int
+    let name: String
+    
+}
 // MARK: - Team
 struct Teams: Codable {
     let area: TeamsArea
@@ -52,13 +51,13 @@ struct Teams: Codable {
     let clubColors: String?
     let venue: String
     let runningCompetitions: [TeamsCompetition]
-    let coach: Coach
+    //let coach: Coach?
     let squad: [Player]
 }
 
 // MARK: - Area
 struct TeamsArea: Codable {
-    let id: Int
+    let id: Int?
     let name: String
     let code: String
     let flag: String?
@@ -66,13 +65,13 @@ struct TeamsArea: Codable {
 
 // MARK: - Coach
 struct Coach: Codable {
-    let id: Int
+    let id: Int?
     let firstName: String?
-    let lastName: String
-    let name: String
-    let dateOfBirth: String
-    let nationality: String
-    let contract: Contract
+    let lastName: String?
+    let name: String?
+    let dateOfBirth: String?
+    let nationality: String?
+    let contract: Contract?
 }
 
 // MARK: - Contract

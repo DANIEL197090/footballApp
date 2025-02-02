@@ -64,4 +64,41 @@ class TableCell: UICollectionViewCell, UITableViewDataSource, UITableViewDelegat
         cell.clubPostionLabel.text = "\(indexPath.row + 1)."
         return cell
     }
+    
+    // MARK: - Custom Header View
+        func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+            let headerView = UIView()
+            headerView.backgroundColor = backgroundSystemColor // Set background color
+            
+            let titleLabel = UILabel()
+            titleLabel.text = "Standings"
+            titleLabel.font = UIFont(name: AppFonts.montserratBold.font, size: 13)
+            titleLabel.textColor = appTextColor
+            titleLabel.translatesAutoresizingMaskIntoConstraints = false
+            
+            
+            let detailsLabel = UILabel()
+            detailsLabel.text = "P  W  L  D  PTS"
+            detailsLabel.font = UIFont(name: AppFonts.montserratBold.font, size: 13)
+            detailsLabel.textColor = appTextColor
+            detailsLabel.translatesAutoresizingMaskIntoConstraints = false
+            detailsLabel.textAlignment = .right
+            headerView.addSubViews(detailsLabel,titleLabel)
+            
+            // Constraints to align title to the left with padding
+            NSLayoutConstraint.activate([
+                titleLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
+                titleLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
+                
+                detailsLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
+                detailsLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
+            ])
+            
+            return headerView
+        }
+        
+        // MARK: - Set Header Height
+        func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+            return 50 // Adjust height as needed
+        }
 }
