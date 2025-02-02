@@ -10,9 +10,11 @@ class PlayersViewController: BaseViewController {
     let playersTableView = UITableView()
     var playersList: [Player] = []
     var clubImage: String
-    init(playersList: [Player], clubImage: String) {
+    var clubName: String
+    init(playersList: [Player], clubImage: String, clubName: String) {
         self.playersList = playersList
         self.clubImage = clubImage
+        self.clubName = clubName
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder: NSCoder) {
@@ -22,6 +24,10 @@ class PlayersViewController: BaseViewController {
         let button = UIButton.cancelButtonDesign()
         button.addTarget(self, action: #selector(didTapOnCancelButton), for: .touchUpInside)
         return button
+    }()
+    lazy var clubNameLabel: UILabel = {
+        let label = UILabel.customLabel(text: clubName, fontSize: 16, fontFamily: AppFonts.montserratBold.font, textAlignment: .center, numberofLines: 0, textColor: appTextColor)
+        return label
     }()
     lazy var clubImageView:  UIImageView  = {
         let imageView =  UIImageView.customImage(image: UIImage(named: "matchesIcon")!)
@@ -50,6 +56,5 @@ class PlayersViewController: BaseViewController {
             self.playersTableView.reloadData()
             self.clubImageView.sd_setImage(with: URL(string: self.clubImage), placeholderImage: UIImage(named: "matchesIcon"))
         }
-       
     }
 }

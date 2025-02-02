@@ -63,6 +63,16 @@ var appTextColor : UIColor {
         }
     }
 }
+var cellSystemColor : UIColor {
+    return UIColor { (trait) -> UIColor in
+        switch trait.userInterfaceStyle {
+        case .dark:
+            return  AppColors.fairBlack.color
+        default:
+            return  AppColors.white.color
+        }
+    }
+}
 var lightBackgroundColor : UIColor {
     return UIColor { (trait) -> UIColor in
         switch trait.userInterfaceStyle {
