@@ -6,15 +6,21 @@
 //
 
 import Foundation
+
 struct TodayFixturesResource {
-    func getResponse(completionHandler: @escaping (_ result: TodayMatchesResponse?,_ statusCode: Int) -> Void) {
+    private let httpUtility: HTTPUtility
+    
+    // Dependency Injection (Default to Real HTTPUtility)
+    init(httpUtility: HTTPUtility = HTTPUtility()) {
+        self.httpUtility = httpUtility
+    }
+
+    func getResponse(completionHandler: @escaping (_ result: TodayMatchesResponse?, _ statusCode: Int) -> Void) {
         let endPoint = AppEndpoints.matchesEndPoint
         let authURL = URL(string: endPoint)!
-        let httpUtility = HTTPUtility()
-        do {
-            httpUtility.makeRequestWithParameters(httpMethodType: HtppMethod.GET.rawValue, requestUrl: authURL, resultType: TodayMatchesResponse.self) { apiResponse, statusCode in
-                completionHandler(apiResponse,statusCode)
-            }
+        
+        httpUtility.makeRequestWithParameters(httpMethodType: HtppMethod.GET.rawValue, requestUrl: authURL, resultType: TodayMatchesResponse.self) { apiResponse, statusCode in
+            completionHandler(apiResponse, statusCode)
         }
     }
 }

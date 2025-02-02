@@ -229,6 +229,15 @@
 			name = PlayersListController;
 			sourceTree = "<group>";
 		};
+		042A04F72D4F0EBC0025239D /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				0435ECD02D4BC4BA00EE2BA1 /* AppDelegate.swift */,
+				0435ECD22D4BC4BA00EE2BA1 /* SceneDelegate.swift */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
 		0435ECC42D4BC4BA00EE2BA1 = {
 			isa = PBXGroup;
 			children = (
@@ -252,14 +261,13 @@
 		0435ECCF2D4BC4BA00EE2BA1 /* FootballDataApp */ = {
 			isa = PBXGroup;
 			children = (
+				042A04F72D4F0EBC0025239D /* Delegate */,
 				042A04F32D4E95940025239D /* loader.json */,
 				0435ED272D4C7B4700EE2BA1 /* Service */,
 				0435ED182D4C6C2B00EE2BA1 /* AppFonts */,
 				0435ED0B2D4C639900EE2BA1 /* Helpers */,
 				0435ED082D4C5D9600EE2BA1 /* DesignComponent */,
 				0435ED032D4BDDA200EE2BA1 /* Views */,
-				0435ECD02D4BC4BA00EE2BA1 /* AppDelegate.swift */,
-				0435ECD22D4BC4BA00EE2BA1 /* SceneDelegate.swift */,
 				0435ECD62D4BC4BA00EE2BA1 /* Main.storyboard */,
 				0435ECDC2D4BC4C000EE2BA1 /* Assets.xcassets */,
 				0435ECDE2D4BC4C000EE2BA1 /* LaunchScreen.storyboard */,
