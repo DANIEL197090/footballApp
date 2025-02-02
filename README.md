@@ -1,4 +1,4 @@
-# fFootballAPP is a dynamic application that provides real-time updates on today's fixtures, league standings, team rosters, and competitions for clubs worldwide.
+# FootballAPP is a dynamic application that provides real-time updates on today's fixtures, league standings, team rosters, and competitions for clubs worldwide.
 | Light mode | Dark mode |
 |----------|----------|
 | <img width="347" alt="Screenshot 2025-02-02 at 2 06 31 AM" src="https://github.com/user-attachments/assets/75265f45-582b-4e29-bd01-ae4835a6aebc" /> | <img width="348" alt="Screenshot 2025-02-02 at 2 07 11 AM" src="https://github.com/user-attachments/assets/17b32cfe-726f-41d7-bc88-1b22850ff597" /> |
