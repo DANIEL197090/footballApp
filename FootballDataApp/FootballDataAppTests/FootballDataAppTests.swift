@@ -2,7 +2,7 @@
 //  FootballDataAppTests.swift
 //  FootballDataAppTests
 //
-//  Created by mac on 1/30/25.
+//  Created by Ifeanyi Mbata on 1/30/25.
 //
 
 import XCTest
