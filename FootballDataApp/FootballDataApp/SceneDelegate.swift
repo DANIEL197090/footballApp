@@ -17,9 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         let viewController: UIViewController // Declare viewController outside the conditions
         viewController = CustomNavigationController(rootViewController: TabBarViewController())
-        if #available(iOS 13.0, *) {
-            window?.overrideUserInterfaceStyle = .light
-              }
+//        if #available(iOS 13.0, *) {
+//            window?.overrideUserInterfaceStyle = .light
+//              }
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
     }

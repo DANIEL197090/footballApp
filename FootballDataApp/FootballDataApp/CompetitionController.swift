@@ -17,7 +17,7 @@ class CompetitionViewController: BaseViewController {
         competitiontableView.delegate = self
         competitiontableView.dataSource = self
         competitiontableView.rowHeight = 50
-        competitiontableView.separatorColor = backgroundSystemColor
+        competitiontableView.separatorColor = .gray
         competitiontableView.backgroundColor =  .systemBackground
         competitiontableView.register(CompetitionCell.self, forCellReuseIdentifier: CompetitionCell.identifier)
         competitiontableView.translatesAutoresizingMaskIntoConstraints = false
